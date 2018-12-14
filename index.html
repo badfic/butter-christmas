@@ -2,16 +2,42 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Butter Christmas</title>
+	<title>HAM Christmas</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+			<a href="/" class="navbar-brand">Butter Christmas Party</a>
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			</div>
+			<div class="navbar-collapse collapse" id="navbar-main">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="/2016/">2016</a>
+					</li>
+					<li>
+						<a href="/2017/">2017</a>
+					</li>
+					<li class="active">
+						<a href="/">2018</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<br/><br/><br/>
 	<div class="container">
 		<div class="row-fluid">
 			<div class="span12">
-				<div class="well"><center><img src="img/tree.gif" height="80" width="80">Butter Christmas Party<img src="img/tree.gif" height="80" width="80"></center></div>
+				<div class="well"><center><img src="img/honey-ham.jpg"><br/><h1>HAM Christmas Party</h1></center></div>
 			</div>
 		</div>
 		
@@ -19,7 +45,7 @@
 
 		<div class="row-fluid">
 			<div class="span12">
-				<a class="btn btn-primary btn-large" style="padding: 1em; font-weight: bold;" href="songs/Butter%20Christmas.zip">DOWNLOAD THE FULL ALBUM</a>
+				<a class="btn btn-primary btn-large" style="padding: 1em; font-weight: bold;" href="songs/Christmas-Ham.zip">DOWNLOAD THE FULL ALBUM</a>
 			</div>
 		</div>
 
@@ -71,19 +97,15 @@
 					</div>
 				</div>
 			</div>
-			<br/><br/>
-			<div class="span6">
-				<iframe src="https://docs.google.com/presentation/d/1ThmoYZ5vDXA8UzSp8fN2ffvSrfB_u3KhNUqFmy01n70/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-			</div>
 		</div>
 
 		<div class="row-fluid"><br/><br/></div>
-		<div class="row-fluid">&copy; 2016 Butter Christmas Party</div>
+		<div class="row-fluid">&copy; 2018 Butter Christmas Party</div>
 		<div class="row-fluid"><br/><br/></div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/add-on/jplayer.playlist.min.js"></script>
 	<script>
@@ -98,7 +120,6 @@ if(ss.addEventListener){ss.addEventListener("load",loadCB)}
 ss.onloadcssdefined=onloadcssdefined;onloadcssdefined(loadCB);return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
 else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 
-		loadCSS("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css");
 		loadCSS("https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/skin/blue.monday/css/jplayer.blue.monday.min.css");
 
 		$(document).ready(function(){
@@ -106,23 +127,11 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 				jPlayer: "#jquery_jplayer_1",
 				cssSelectorAncestor: "#jp_container_1"
 			}, [
-				{ title: "All I Want For Christmas Is Butter", mp3: "songs/01%20-%20All%20I%20Want%20For%20Christmas%20Is%20Butter.mp3" },
-				{ title: "Introduction", mp3: "songs/02%20-%20Introduction.mp3" },
-				{ title: "Have A Very Buttery Christmas", mp3: "songs/03%20-%20Have%20A%20Very%20Buttery%20Christmas.mp3" },
-				{ title: "Butter Of The Glaze", mp3: "songs/04%20-%20Butter%20Of%20The%20Glaze.mp3" },
-				{ title: "This Butter", mp3: "songs/05%20-%20This%20Butter.mp3" },
-				{ title: "Panda Butter", mp3: "songs/06%20-%20Panda%20Butter.mp3" },
-				{ title: "Have Yourself A Butter Filled Christmas", mp3: "songs/07%20-%20Have%20Yourself%20A%20Butter%20Filled%20Christmas.mp3" },
-				{ title: "Churning In A Butter Wonderland", mp3: "songs/08%20-%20Churning%20In%20A%20Butter%20Wonderland.mp3" },
-				{ title: "Churnin Around The Butter Tree", mp3: "songs/09%20-%20Churnin%20Around%20The%20Butter%20Tree.mp3" },
-				{ title: "Sticks On Sticks", mp3: "songs/10%20-%20Sticks%20On%20Sticks.mp3" },
-				{ title: "It's The Most Butter Filled Time Of The Year", mp3: "songs/11%20-%20Its%20The%20Most%20Butter%20Filled%20Time%20Of%20The%20Year.mp3" },
-				{ title: "Butter It's Cold Outside", mp3: "songs/12%20-%20Butter%20Its%20Cold%20Outside.mp3" },
-				{ title: "Hark The Herald Butter Glaze", mp3: "songs/13%20-%20Hark%20The%20Herald%20Butter%20Glaze.mp3" },
-				{ title: "All The Way Glazed Up", mp3: "songs/14%20-%20All%20The%20Way%20Glazed%20Up.mp3" },
-				{ title: "Butter Baby", mp3: "songs/15%20-%20Butter%20Baby.mp3" },
-				{ title: "Feliz Butter Glaze", mp3: "songs/16%20-%20Feliz%20Butter%20Glaze.mp3" },
-				{ title: "Grandma Got Run Over By Some Butter", mp3: "songs/17%20-%20Grandma%20Got%20Run%20Over%20By%20Some%20Butter.mp3" }
+				{ title: "Introduction - All I Want To Eat Is Honey Ham", mp3: "songs/001-All-I-Want-To-Eat-Is-Honey-Ham.mp3" },
+				{ title: "Jingle Ham", mp3: "songs/002-Jingle-Ham.mp3" },
+				{ title: "Let's Eat Ham", mp3: "songs/003-Lets-Eat-Ham.mp3" },
+				{ title: "Ham Hall Of Fame", mp3: "songs/004-Ham-Hall-Of-Fame.mp3" },
+				{ title: "Outro", mp3: "songs/005-Outro.mp3" }
 			], {
 				swfPath: "https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.swf",
 				supplied: "mp3",
