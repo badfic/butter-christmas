@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="From the creators of Badfic: Have a Very 8 bit Christmas">
+    <meta name="author" content="Badfic">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <title>Have a Very 8 bit Christmas</title>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+            <a href="/" class="navbar-brand">Butter Christmas Party</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/2016/">2016</a>
+                    </li>
+                    <li class="active">
+                        <a href="/2017/">2017</a>
+                    </li>
+                    <li>
+                        <a href="/">2018</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br/><br/><br/>
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.6/pixi.js"></script>
+    <script src="js/Utils.js"></script>
+
+    <script>
+        // GLOBALS
+        var renderer;
+        var stage;
+        var bgMusic;
+
+        var setupObj;
+        
+        var doDestroy;
+
+        // LEVELS
+        var Levels = {};
+        var activeLevel;
+
+        var left = Utils.keyboardHelper(65);
+        var right = Utils.keyboardHelper(68);
+        var spacebar = Utils.keyboardHelper(32);
+
+        // Only for flavortown (W,S)
+        var up = Utils.keyboardHelper(87);
+        var down = Utils.keyboardHelper(83);
+    </script>
+
+    <!-- Levels -->
+    <script src="js/level1.js"></script>
+    <script src="js/level2.js"></script>
+    <script src="js/level3.js"></script>
+    <script src="js/level4.js"></script>
+    <script src="js/level5.js"></script>
+    <script src="js/levelFlavortown.js"></script>
+    <script src="js/levelBoss.js"></script>
+    <script src="js/levelCredits.js"></script>
+    <script>
+        function gameLoop() {
+            requestAnimationFrame(gameLoop);
+
+            if (setupObj) {
+                activeLevel.setup(setupObj);
+                setupObj = undefined;
+            }
+
+            TWEEN.update();
+
+            activeLevel.state();
+
+            if (doDestroy) {
+                activeLevel.destroy();
+                doDestroy = false;
+            }
+
+            renderer.render(stage);
+        }
+
+        // INIT
+        (function() {
+            var currentLevel = Utils.getQueryParam("level");
+
+            if (!currentLevel) {
+                currentLevel = "1";
+            }
+
+            currentLevel = "level" + currentLevel;
+
+            activeLevel = Levels[currentLevel];
+            setupObj = {};
+
+            var type = "WebGL";
+            if (!PIXI.utils.isWebGLSupported()) {
+                type = "canvas";
+            }
+
+            PIXI.utils.sayHello(type);
+
+            renderer = PIXI.autoDetectRenderer(1280, 720);
+
+            document.body.appendChild(renderer.view);
+
+            stage = new PIXI.Container();
+
+            PIXI.loader
+                .add("images/ariel-sprite.png")
+                .add("images/background-1.png")
+                .add("images/bee-sprite.png")
+                .add("images/butter-puck.png")
+                .add("images/burger.png")
+                .add("images/caitlyn-sprite.png")
+                .add("images/chelsea-sprite.png")
+                .add("images/christmas-tree.png")
+                .add("images/christmas-tree-lights.png")
+                .add("images/christmas-tree-snow.png")
+                .add("images/desdemona-sprite.png")
+                .add("images/fieri-sprite.png")
+                .add("images/finn-sprite.png")
+                .add("images/james-sprite.png")
+                .add("images/josh-sprite.png")
+                .add("images/margarine-boss.png")
+                .add("images/padme-sprite.png")
+                .add("images/portal.png")
+                .load(gameLoop);
+        }());
+    </script>
+</body>
+</html>
+
