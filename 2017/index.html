@@ -45,6 +45,7 @@
         </div>
     </div>
     <br/><br/><br/>
+    <button id="startButton" type="button" class="btn btn-primary">Start Game</button>
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
@@ -73,6 +74,8 @@
         // Only for flavortown (W,S)
         var up = Utils.keyboardHelper(87);
         var down = Utils.keyboardHelper(83);
+
+        var startButton = document.getElementById("startButton");
     </script>
 
     <!-- Levels -->
@@ -105,8 +108,9 @@
             renderer.render(stage);
         }
 
-        // INIT
-        (function() {
+        function mainInit() {
+            startButton.parentNode.removeChild(startButton);
+
             var currentLevel = Utils.getQueryParam("level");
 
             if (!currentLevel) {
@@ -151,7 +155,11 @@
                 .add("images/padme-sprite.png")
                 .add("images/portal.png")
                 .load(gameLoop);
-        }());
+        }
+
+        startButton.addEventListener("click", function() {
+            mainInit();
+        });
     </script>
 </body>
 </html>
